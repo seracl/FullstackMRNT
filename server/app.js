@@ -20,8 +20,9 @@ const app = express();
 const adminRoutes = require('./routes/admin');
 
 /* Body Parser */
-app.use(bodyParser.urlencoded({extended: true})); //x-www-form-urlencoded <form>
-app.use(express.static(path.join(__dirname, 'public'))); //app.use(bodyParser.json()); //application/json
+app.use(bodyParser.urlencoded({ extended: true })); //x-www-form-urlencoded <form>
+app.use(bodyParser.json()); //application/json
+app.use(express.static(path.join(__dirname, 'public'))); 
 
 /* Manage routes */
 app.use('/admin', adminRoutes);
